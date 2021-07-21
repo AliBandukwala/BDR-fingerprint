@@ -1,0 +1,72 @@
+<div class="d-flex flex-column">
+    <div class="Heading">Select Fingers to Capture</div>
+
+    <div class="FingerImagesDiv d-flex align-self-center">   
+        <ng-container *ngFor="let finger of FlatFingersLeft">
+            <img *ngIf="finger.imgVis" src='{{"assets/Images/"+ finger.imgSrc +".svg"}}' style="position: absolute; height: 250px;">
+        </ng-container>
+        <img *ngIf="bothThumbs.imgVis" src='{{"assets/Images/"+ bothThumbs.imgSrc +".svg"}}' style="position: absolute; height: 250px;">
+        <ng-container *ngFor="let finger of FlatFingersRight">
+            <img *ngIf="finger.imgVis" src='{{"assets/Images/"+ finger.imgSrc +".svg"}}' style="position: absolute; height: 250px;">
+        </ng-container>
+        <ng-container *ngFor="let finger of RolledFingers">
+            <img *ngIf="finger.imgVis" src='{{"assets/Images/"+ finger.imgSrc +".svg"}}' style="position: absolute; height: 250px;">
+        </ng-container>
+        <img src="assets/Images/hands_empty.svg" style="position: relative; height: 250px;">
+    </div>
+   
+    <mat-radio-group class="align-self-center" [(ngModel)]="selectedOption">
+        <mat-radio-button class="m-2" *ngFor="let option of fingerOptions" [value]="option.value" [checked]="option.checked">
+            {{option.name}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <div [ngSwitch]="selectedOption">
+        
+        <div *ngSwitchCase="'flat'" class="FlatFingersChipsDiv d-flex flex-column">
+
+            <div class="FingerHeading">Flat Finger Options:</div>
+            <div class="d-flex flex-row justify-content-around">
+                <div class="LeftFingersChips" style="width: 32%;">
+                    <mat-chip-list [multiple]="true" [selectable]="true">
+                        <mat-chip *ngFor="let finger of FlatFingersLeft" 
+                        [selected]="finger.selected" (click)="finger.selected = !finger.selected; finger.imgVis = !finger.imgVis;">
+                        {{finger.name}}
+                        </mat-chip>
+                    </mat-chip-list>
+                </div>
+                <div>
+                    <mat-chip-list [selectable]="true">
+                        <mat-chip [selected]="bothThumbs.selected" (click)="bothThumbs.selected = !bothThumbs.selected; bothThumbs.imgVis = !bothThumbs.imgVis;">
+                            {{bothThumbs.name}}
+                        </mat-chip>
+                    </mat-chip-list>
+                </div>
+                <div class="RightFingersChip" style="width: 32%;">
+                    <mat-chip-list [multiple]="true" [selectable]="true">
+                        <mat-chip *ngFor="let finger of FlatFingersRight" 
+                        [selected]="finger.selected" (click)="finger.selected = !finger.selected; finger.imgVis = !finger.imgVis;">
+                        {{finger.name}}
+                        </mat-chip>
+                    </mat-chip-list>
+                </div>
+            </div>
+
+        </div>
+
+        <div *ngSwitchCase="'rolled'" class="RolledFingersChipsDiv d-flex flex-column mt-3 mb-4">
+
+            <div class="FingerHeading">Rolled Finger Options:</div>
+            <mat-chip-list [multiple]="true" [selectable]="true" class="d-flex flex-row justify-content-center">
+                <mat-chip *ngFor="let finger of RolledFingers" 
+                [selected]="finger.selected" (click)="finger.selected = !finger.selected; finger.imgVis = !finger.imgVis;">
+                {{finger.name}}
+                </mat-chip>
+            </mat-chip-list>
+
+        </div>
+
+    </div>
+    
+    <button (click)="onSelectionFinished()" class="PrimaryBtn btn col-sm-10 col-md-5 mt-3">Select These Fingers</button>    
+</div>

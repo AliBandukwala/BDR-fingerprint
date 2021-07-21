@@ -1,0 +1,14 @@
+<div class="d-flex flex-column">
+    <div class="d-flex flex-column" *ngIf="connecting; else notConnecting">
+        <div class="Heading">Connecting...</div>
+        <img class="align-self-center my-5" width="50" height="50" src="assets/Images/spinner.gif">
+    </div>
+    <ng-template #notConnecting>
+        <div class="Heading">Connect to HDCS</div>
+        <img class="Image align-self-center" src="assets/Images/StartFingerprint.png">
+        <button (click)="connectToHdcs()" class="PrimaryBtn btn col-sm-10 col-md-5">CONNECT TO HDCS</button>   
+    </ng-template>
+    <div class="d-flex flex-column" *ngIf="hdcsConnected">
+        <button #connectToPort (click)="connect()" class="HiddenBtn"></button>
+    </div> 
+</div>

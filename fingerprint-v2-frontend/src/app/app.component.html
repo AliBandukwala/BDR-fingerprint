@@ -1,0 +1,23 @@
+<div class="App">
+
+  <nav class="navbar">
+    <div class="navbar-brand d-flex flex-row col-sm-10 col-md-5">
+      <div class="bg-white p-1">
+        <img src="assets/Images/logo_bdr.svg" width="60" height="60" class="HeaderLogo d-inline-block align-top" alt="">
+      </div>
+      <div class="mt-3 ml-3">Fingerprint Capture</div>
+    </div>
+  </nav>
+
+  <div class="MainContainer container" [ngSwitch]="appState">
+    
+    <app-stepper></app-stepper>
+
+    <app-select-fingers *ngSwitchCase="'SelectFingers'" (changeAppStateEmitter)="changeAppState($event)"></app-select-fingers>
+    <app-connect-hdcs *ngSwitchCase="'Connect'" (changeAppStateEmitter)="changeAppState($event)"></app-connect-hdcs>
+    <app-capture-fingerprint *ngSwitchCase="'CaptureFingerprint'" (changeAppStateEmitter)="changeAppState($event)"></app-capture-fingerprint> 
+    
+  </div>
+  
+</div>
+

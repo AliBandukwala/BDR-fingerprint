@@ -1,0 +1,135 @@
+<div class="CancelTask btn p-1" (click)="cancelTask()">
+    <img class="rounded-circle" width="20" height="20" src="assets/Images/cancel.png" alt="cancel task">
+    Restart Task
+</div>
+<div *ngIf="ShowFinal; else capturingBlock" class="d-flex flex-column">
+    <div class="Heading">Images are Scanned and Saved</div>
+    <div class="d-flex flex-column my-5" *ngIf="showThankYouMsg; else mainBlock">
+        <div class="Heading">THANK YOU</div>
+    </div>
+    <ng-template #mainBlock>
+    <div class="row justify-content-around">
+        <div class="CompleteMiddleDiv d-flex flex-column mb-2 col-xl-5 col-md-5 col-sm-10">
+            <div class="Heading">Left Fingerprint</div>
+            <img class="Image" alt="" src="data:image/png;base64,{{first.image}}">
+            <label class="Label">Quality: {{first.quality}}</label>     
+        </div>
+        <div class="CompleteMiddleDiv d-flex flex-column mb-2 col-xl-5 col-md-5 col-sm-10">
+            <div class="Heading">Right Fingerprint</div>
+            <img class="Image" alt="" src="data:image/png;base64,{{second.image}}">
+            <label class="Label">Quality: {{second.quality}}</label>  
+        </div>     
+    </div> 
+    <div  class="row justify-content-around px-3 mt-2">
+        <button (click)="reStart()" class="SecondaryBtn btn mb-2 col-sm-10 col-md-5 p-1">RESTART CAPTURE</button>
+        <button (click)="accept()" class="PrimaryBtn btn mb-2 col-sm-10 col-md-5 p-1">ACCEPT CAPTURE</button>
+    </div>
+    </ng-template>
+</div>
+
+<ng-template #capturingBlock>
+<div class="d-flex flex-column">
+
+    <div class="Heading align-self-center">{{heading}}</div>
+
+    <div class="d-flex flex-column align-items-center" *ngIf="badQuality; else mainBlock">
+        <img alt="" src="data:image/png;base64,{{badFingerprint.image}}" class="Image">
+        <label class="Label">Quality: {{badFingerprint.quality}}</label>
+        <label class="BadQualityLabel">QUALITY OF THE FINGERPRINT IS TOO LOW!</label>
+        <button (click)="reCapture()" class="PrimaryBtn btn mb-2 col-sm-10 col-md-10 p-1">RECAPTURE THIS FINGERPRINT</button>
+    </div>
+
+    <ng-template #mainBlock>
+
+        <div *ngIf="captured; else liveViewBlock" class="d-flex flex-column align-items-center">
+
+            <div class="d-flex flex-row justify-content-around w-100">
+                <div class="BorderedDiv LeftInterImgsDiv d-flex flex-column">
+                    <div class="InterHeading">Left Intermediate Images</div>
+                    <div *ngIf="hasInterFingerImgs" class="d-flex flex-row">
+                        <div class="card text-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateFingerprintImages[0]}}" alt="" class="InterImages">
+                            <div class="card-title">{{interData.IntermediateLeftFingerCodes[0]}}</div>
+                        </div>
+                        <div class="card text-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateFingerprintImages[1]}}" alt="" class="InterImages">
+                            <div class="card-title">{{interData.IntermediateLeftFingerCodes[1]}}</div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div *ngIf="hasInterFingerImgs" class="card text-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateFingerprintImages[2]}}" alt="" class="InterImages">
+                            <div class="card-title">{{interData.IntermediateLeftFingerCodes[2]}}</div>
+                        </div>
+                        <div *ngIf="hasInterFingerImgs" class="card text-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateFingerprintImages[3]}}" alt="" class="InterImages">
+                            <div class="card-title">{{interData.IntermediateLeftFingerCodes[3]}}</div>
+                        </div>
+                        <div *ngIf="hasInterLeftThumb" class="card text-center align-self-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateLeftThumb}}" alt="" class="InterImages">
+                            <div class="card-title">Left Thumb</div>
+                        </div>
+                    </div>                 
+                </div>
+    
+                <div class="MainSlapImgDiv d-flex align-items-center card text-center mb-3" style="width: 300px;">
+                    <img alt="" src="data:image/png;base64,{{interData.IntermediateSlapImage}}" class="Image">
+                    <div class="Label card-body"><label class="card-text">Quality: {{capturedFingerprint.quality}}</label></div>
+                    <div class="card-subtitle text-muted mb-2" style="font-size: 1rem;">Alert: {{interData.LiveStatus}}</div>
+                </div>
+    
+                <div class="BorderedDiv RightInterImgsDiv d-flex flex-column">
+                    <div class="InterHeading">Right Intermediate Images</div>
+                    <div *ngIf="hasInterFingerImgs" class="d-flex flex-row">
+                        <div class="card text-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateFingerprintImages[0]}}" alt="" class="InterImages">
+                            <div class="card-title">{{interData.IntermediateRightFingerCodes[0]}}</div>
+                        </div>
+                        <div class="card text-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateFingerprintImages[1]}}" alt="" class="InterImages">
+                            <div class="card-title">{{interData.IntermediateRightFingerCodes[1]}}</div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div *ngIf="hasInterFingerImgs" class="card text-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateFingerprintImages[2]}}" alt="" class="InterImages">
+                            <div class="card-title">{{interData.IntermediateRightFingerCodes[2]}}</div>
+                        </div>
+                        <div *ngIf="hasInterFingerImgs" class="card text-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateFingerprintImages[3]}}" alt="" class="InterImages">
+                            <div class="card-title">{{interData.IntermediateRightFingerCodes[3]}}</div>
+                        </div>
+                        <div *ngIf="hasInterRightThumb" class="card text-center align-self-center">
+                            <img src="data:image/png;base64,{{interData.IntermediateRightThumb}}" alt="" class="InterImages">
+                            <div class="card-title">Right Thumb</div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+
+            <div class="d-flex flex-row justify-content-around my-3 w-100">
+                <button (click)="reCapture()" class="SecondaryBtn btn col-sm-10 col-md-4">RECAPTURE THIS FINGERPRINT</button>
+                <button (click)="continue()" class="PrimaryBtn btn col-sm-10 col-md-4">{{continueBtnText}}</button>
+            </div>
+
+        </div>
+
+        <ng-template #liveViewBlock>
+            <div class="CompleteMiddleDiv d-flex flex-row justify-content-around w-75 align-self-center">
+                <img alt="" src="data:image/png;base64,{{liveView}}" class="Image">
+                <div class="InstructionDiv d-flex flex-column justify-content-center w-50">
+                    <div class="Heading">Intructions:</div>
+                    <div class="Instructions">
+                        Et tempor consequat officia eiusmod dolor consectetur officia ea veniam commodo adipisicing est minim.
+                    </div>
+                </div>    
+            </div>
+            <button (click)="capture()" class="PrimaryBtn btn my-2 col-sm-10 col-md-8 p-1">CAPTURE FINGERPRINT</button>
+        </ng-template> 
+
+    </ng-template>
+
+</div>
+</ng-template>
+
+

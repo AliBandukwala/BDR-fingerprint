@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="412"
+   height="300"
+   id="svg2"
+   version="1.1"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="left_ring.svg"
+   inkscape:export-filename="C:\work\bcore4\resource\images\capture_ring_left.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient5225"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5227" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5207"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5209" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.6819444"
+     inkscape:cx="99.202358"
+     inkscape:cy="164.60555"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3880"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0"
+     inkscape:snap-bbox="false" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="CaptureRingLeft"
+     inkscape:groupmode="layer"
+     id="g3880"
+     transform="translate(0,-752.36218)"
+     style="display:inline">
+    <path
+       sodipodi:nodetypes="ccccccccccsc"
+       inkscape:connector-curvature="0"
+       id="path3882"
+       d="m 58.886456,815.75989 c 1.45173,0.12341 2.89403,0.6939 4.21875,1.6875 0.01,0.0111 0.0214,0.0201 0.0312,0.0312 1.23324,1.39002 2.47849,3.02966 3.6875,4.90625 0.78484,1.8147 1.33777,4.01145 1.5625,6.625 1.75739,14.61094 5.83514,28.90091 9.9375,43 3.59731,4.92165 2.06783,15.13289 4.79834,18.74146 -8.35591,9.10009 -13.20474,15.26659 -22.86377,15.51953 -1.02733,-10.42497 -5.26672,-24.05031 -5.52832,-34.60474 -1.04028,-14.61077 -2.39313,-29.18796 -5.09375,-43.59375 -0.5609,-8.259 4.31412,-12.7321 9.25,-12.3125 z"
+       style="fill:#44e87e;fill-opacity:1;stroke:#44e87e;stroke-width:5.98758;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:#0000ff;stroke-width:0.59455"
+       d="m 58.973144,155.99842 c -0.835403,-0.58514 -1.382365,-1.81665 -1.64982,-3.71462 -0.220054,-1.5616 -1.324688,-7.5896 -2.454744,-13.39555 -1.355464,-6.96405 -2.460119,-15.36039 -3.246186,-24.67383 -1.274095,-15.095663 -2.442723,-25.136367 -3.926698,-33.737691 -0.507756,-2.943023 -0.779564,-6.603503 -0.604017,-8.1344 1.149927,-10.028234 11.005662,-15.018602 17.705976,-8.96527 4.364662,3.943209 5.438214,6.714447 7.0849,18.28877 1.369969,9.629321 6.963002,31.836331 9.583531,38.051201 0.689412,1.63501 1.762609,6.04954 2.384884,9.81007 0.622274,3.76053 1.273632,7.63997 1.44746,8.62098 0.289203,1.63213 -0.230587,2.32022 -6.118747,8.10001 -6.590434,6.46914 -10.435126,9.00077 -14.791334,9.73974 -1.289951,0.21882 -2.754892,0.50767 -3.255424,0.64189 -0.500533,0.13422 -1.472435,-0.14987 -2.159781,-0.6313 z"
+       id="path74"
+       transform="translate(0,752.36218)" />
+  </g>
+  <g
+     inkscape:label="CapturedMiddleLeft"
+     inkscape:groupmode="layer"
+     id="g3876"
+     transform="translate(0,-752.36218)"
+     style="display:inline" />
+  <g
+     inkscape:label="CaptureThumbLeft"
+     inkscape:groupmode="layer"
+     id="g3872"
+     transform="translate(0,-752.36218)"
+     style="display:inline" />
+  <g
+     inkscape:label="CaptureIndexLeft"
+     inkscape:groupmode="layer"
+     id="g3868"
+     transform="translate(0,-752.36218)"
+     style="display:inline" />
+  <g
+     style="display:inline"
+     transform="translate(0,-752.36218)"
+     id="g3851"
+     inkscape:groupmode="layer"
+     inkscape:label="CaptureRingRight" />
+  <g
+     style="display:inline"
+     transform="translate(0,-752.36218)"
+     id="g3786"
+     inkscape:groupmode="layer"
+     inkscape:label="CapturedMiddleRight" />
+  <g
+     style="display:inline"
+     transform="translate(0,-752.36218)"
+     id="g3835"
+     inkscape:groupmode="layer"
+     inkscape:label="CaptureThumbRight" />
+  <g
+     style="display:inline"
+     transform="translate(0,-752.36218)"
+     id="g3819"
+     inkscape:groupmode="layer"
+     inkscape:label="CaptureIndexRight" />
+  <g
+     inkscape:label="Hands"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-752.36218)"
+     style="display:inline">
+    <g
+       id="g5262"
+       transform="matrix(1.1728508,0,0,1.1728508,-342.9488,412.75912)">
+      <g
+         style="fill:none;stroke:#989898;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         inkscape:label="Ebene 1"
+         id="layer1-9"
+         transform="matrix(1.0067989,0,0,1.0067989,124.86336,-414.10298)" />
+    </g>
+  </g>
+</svg>
